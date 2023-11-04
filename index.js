@@ -1,12 +1,14 @@
-import fs from "fs/promises";
-import path from "path";
+import * as contactsDetails from "./contacts.js";
 
-//const contactsPath = path.resolve("db", "contacts.json");
-
-const func = async () => {
-   // const text = await fs.readFile(contactsPath, "utf-8");
-    const result = await fs.appendFile(contactsPath, "Have a nice day, mentor!");
-    console.log(result);
+const invokeAction = async ({ action }) => {
+    switch (action) {
+        case "list":
+            const allContacts = await contactsDetails.getAllContacts();
+            return console.log(allContacts);
+        default:
+            console.log("Unknown action");
+    }
 }
 
-func(); 
+
+//invokeAction({action:"list"})
