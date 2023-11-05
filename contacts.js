@@ -44,9 +44,6 @@ export const removeContact = async (id) => {
     return result;  
 }
 
-/*
-function removeContact(contactId) {
-  // ...твой код. Возвращает объект удаленного контакта. Возвращает null, если объект с таким id не найден.
-}*/
+
 
  
